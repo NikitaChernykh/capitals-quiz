@@ -2,10 +2,11 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import CarouselQuestionSlide from './slides/question-slide/carouselQuestionSlide';
 import { questions } from '../../data/questions';
 import CarouselIndicator from './carousel-indicator/carouselIndicator';
+import CarouselSummerySlide from './slides/summery-slide/carouselSummerySlide';
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
-  const numberOfSlides = questions.length;
+  const numberOfSlides = questions.length + 1;
   const carouselRef = useRef<HTMLUListElement>(null);
 
   const scrollToSlide = useCallback((index: number) => {
@@ -67,6 +68,7 @@ export default function Carousel() {
             />
           );
         })}
+        <CarouselSummerySlide active={activeSlide === 5} />
       </ul>
     </section>
   );
