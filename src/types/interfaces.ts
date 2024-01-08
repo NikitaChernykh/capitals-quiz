@@ -28,6 +28,10 @@ export interface CarouselQuestionSlideProps {
     options: Option[];
 }
 
+export interface CarouselSummerySlideProps {
+    active: boolean;
+}
+  
 export interface OptionButtonProps {
     icon: string;
     label: string;
