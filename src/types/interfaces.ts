@@ -8,3 +8,9 @@ export interface Question {
     question: string;
     options: Option[];
 }
+
+// Props
+export interface Heading2Props {
+    text: string;
+    color?: string;
+  }
