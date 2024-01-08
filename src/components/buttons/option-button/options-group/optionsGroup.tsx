@@ -1,10 +1,12 @@
 import OptionButton from '../optionButton';
-
 import { OptionsGroupProps } from '../../../../types/interfaces';
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../../state/store.hooks';
+import { setAnswer } from '../../../../state/slices/selectedOptionSlice';
 
-const OptionsGroup = ({ options }: OptionsGroupProps) => {
-  const [answer, setAnswer] = useState<number | null>(null);
+const OptionsGroup = ({ options, questionId }: OptionsGroupProps) => {
+  const quizAnswers = useAppSelector((state) => state.quiz.answers);
+  const dispatch = useAppDispatch();
+
   return (
     <ul className='flex text-center mx-auto'>
       {options.map((option, index) => (
@@ -12,9 +14,9 @@ const OptionsGroup = ({ options }: OptionsGroupProps) => {
           <OptionButton
             icon={option.icon}
             label={option.label}
-            active={answer === index}
+            active={quizAnswers[questionId] === index}
             onClick={() => {
-              setAnswer(index);
+              dispatch(setAnswer({ question: questionId, answer: index }));
             }}
           />
         </li>

@@ -12,6 +12,7 @@ export default function Carousel() {
               key={slideIndex}
               question={item.question}
               options={item.options}
+              questionId={slideIndex}
             />
           );
         })}

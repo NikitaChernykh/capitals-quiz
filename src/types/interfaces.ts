@@ -17,8 +17,14 @@ export interface Heading2Props {
 
 export  interface OptionsGroupProps {
     options: Option[];
+    questionId: number;
 }
 
+export interface CarouselQuestionSlideProps {
+    questionId: number;
+    question: string;
+    options: Option[];
+  }
 
 export interface OptionButtonProps {
     icon: string;
