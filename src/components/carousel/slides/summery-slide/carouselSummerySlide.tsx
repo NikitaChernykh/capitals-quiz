@@ -4,14 +4,23 @@ import { questions } from '../../../../data/questions';
 import { CarouselSummerySlideProps } from '../../../../types/interfaces';
 import Heading3 from '../../../text/heading-h3/heading-h3';
 import SubmitButton from '../../../buttons/submit-button/submitButton';
+import axios from 'axios';
 
 export default function CarouselSummerySlide({
   active,
 }: CarouselSummerySlideProps) {
   const answers = useAppSelector((state) => state.quiz.answers);
 
-  const handleSubmit = () => {
-    console.log('sent');
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(
+        'https://run.mocky.io/v3/9ddaff5d-aa21-4b09-b307-596f85a17183',
+        answers
+      );
+      console.log('Response: Success', response.data);
+    } catch (error) {
+      console.error('Error submitting answers:', error);
+    }
   };
 
   return (
