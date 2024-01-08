@@ -23,12 +23,19 @@ export  interface OptionsGroupProps {
 export interface CarouselQuestionSlideProps {
     questionId: number;
     question: string;
+    active: boolean;
     options: Option[];
-  }
+}
 
 export interface OptionButtonProps {
     icon: string;
     label: string;
     active: boolean;
     onClick: () => void;
-  }
+}
+
+export interface CarouselIndicatorProps {
+    numberOfSlides: number;
+    activeSlide: number;
+    onIndicatorClick: (index: number) => void;
+}

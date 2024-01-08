@@ -6,6 +6,7 @@ import OptionsGroup from '../../../buttons/option-button/options-group/optionsGr
 export default function CarouselQuestionSlide({
   question,
   options,
+  active,
   questionId,
 }: CarouselQuestionSlideProps) {
   return (
