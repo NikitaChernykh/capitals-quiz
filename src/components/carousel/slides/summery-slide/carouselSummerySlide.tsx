@@ -2,6 +2,7 @@ import React from 'react';
 import { useAppSelector } from '../../../../state/store.hooks';
 import { questions } from '../../../../data/questions';
 import { CarouselSummerySlideProps } from '../../../../types/interfaces';
+import Heading3 from '../../../text/heading-h3/heading-h3';
 
 export default function CarouselSummerySlide({
   active,
@@ -17,7 +18,10 @@ export default function CarouselSummerySlide({
       ></section>
       <section className={`ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}>
         <div>
-          <h3>An overview of your answers:</h3>
+          <Heading3
+            text='An overview of your answers:'
+            activateAnimation={active}
+          />
           <ul>
             {Object.entries(answers).map(([questionId, answerIndex], index) => {
               const question = questions[index].question;

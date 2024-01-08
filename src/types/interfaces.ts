@@ -16,6 +16,12 @@ export interface Heading2Props {
     color?: string;
 }
 
+export interface Heading3Props {
+    text: string;
+    activateAnimation: boolean;
+    color?: string;
+}
+
 export  interface OptionsGroupProps {
     options: Option[];
     questionId: number;
