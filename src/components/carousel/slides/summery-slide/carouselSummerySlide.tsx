@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAppSelector } from '../../../../state/store.hooks';
 import Heading3 from '../../../text/heading-h3/heading-h3';
 import SubmitButton from '../../../buttons/submit-button/submitButton';
@@ -13,6 +13,7 @@ export default function CarouselSummerySlide({
   active,
 }: CarouselSummerySlideProps) {
   const answers = useAppSelector((state) => state.quiz.answers);
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
   const handleSubmit = async () => {
     try {
@@ -21,6 +22,7 @@ export default function CarouselSummerySlide({
         answers
       );
       console.log('Response: Success', response.data);
+      setSubmissionSuccess(true);
     } catch (error) {
       console.error('Error submitting answers:', error);
     }
@@ -33,27 +35,37 @@ export default function CarouselSummerySlide({
           active ? 'lg:animate-slide-left' : ' '
         }`}
       ></section>
-      <section className={`ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}>
-        <div>
-          <Heading3
-            text='An overview of your answers:'
-            activateAnimation={active}
-          />
-          <ul>
-            {Object.entries(answers).map(([questionId, answerIndex], index) => {
-              return (
-                <AnswerCard
-                  answerIndex={answerIndex}
-                  index={index}
-                  active={active}
-                  questionId={questionId}
-                />
-              );
-            })}
-          </ul>
-          <SubmitButton activateAnimation={active} onClick={handleSubmit} />
-        </div>
-      </section>
+      {submissionSuccess ? (
+        <section
+          className={`w-full ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}
+        >
+          <Heading3 text='Thank you!' activateAnimation={active} />
+        </section>
+      ) : (
+        <section className={`ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}>
+          <div>
+            <Heading3
+              text='An overview of your answers:'
+              activateAnimation={active}
+            />
+            <ul>
+              {Object.entries(answers).map(
+                ([questionId, answerIndex], index) => {
+                  return (
+                    <AnswerCard
+                      answerIndex={answerIndex}
+                      index={index}
+                      active={active}
+                      questionId={questionId}
+                    />
+                  );
+                }
+              )}
+            </ul>
+            <SubmitButton activateAnimation={active} onClick={handleSubmit} />
+          </div>
+        </section>
+      )}
     </li>
   );
 }
