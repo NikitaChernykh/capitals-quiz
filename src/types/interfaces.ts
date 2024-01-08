@@ -13,4 +13,16 @@ export interface Question {
 export interface Heading2Props {
     text: string;
     color?: string;
+}
+
+export  interface OptionsGroupProps {
+    options: Option[];
+}
+
+
+export interface OptionButtonProps {
+    icon: string;
+    label: string;
+    active: boolean;
+    onClick: () => void;
   }
