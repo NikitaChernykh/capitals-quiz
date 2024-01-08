@@ -3,11 +3,16 @@ import { useAppSelector } from '../../../../state/store.hooks';
 import { questions } from '../../../../data/questions';
 import { CarouselSummerySlideProps } from '../../../../types/interfaces';
 import Heading3 from '../../../text/heading-h3/heading-h3';
+import SubmitButton from '../../../buttons/submit-button/submitButton';
 
 export default function CarouselSummerySlide({
   active,
 }: CarouselSummerySlideProps) {
   const answers = useAppSelector((state) => state.quiz.answers);
+
+  const handleSubmit = () => {
+    console.log('sent');
+  };
 
   return (
     <li className='snap-center h-screen lg:flex bg-slate-100 relative'>
@@ -56,6 +61,7 @@ export default function CarouselSummerySlide({
               );
             })}
           </ul>
+          <SubmitButton activateAnimation={active} onClick={handleSubmit} />
         </div>
       </section>
     </li>
