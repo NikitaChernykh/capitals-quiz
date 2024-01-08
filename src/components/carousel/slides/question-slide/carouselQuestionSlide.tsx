@@ -1,7 +1,14 @@
 import React from 'react';
-import { CarouselQuestionSlideProps } from './../../../../types/interfaces';
+import { Option } from './../../../../types/interfaces';
 import Heading2 from '../../../text/heading-h2/heading-h2';
 import OptionsGroup from '../../../buttons/option-button/options-group/optionsGroup';
+
+export interface CarouselQuestionSlideProps {
+  questionId: number;
+  question: string;
+  active: boolean;
+  options: Option[];
+}
 
 export default function CarouselQuestionSlide({
   question,

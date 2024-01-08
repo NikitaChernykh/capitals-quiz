@@ -1,7 +1,12 @@
 import OptionButton from '../optionButton';
-import { OptionsGroupProps } from '../../../../types/interfaces';
+import { Option } from '../../../../types/interfaces';
 import { useAppDispatch, useAppSelector } from '../../../../state/store.hooks';
 import { setAnswer } from '../../../../state/slices/selectedOptionSlice';
+
+export interface OptionsGroupProps {
+  options: Option[];
+  questionId: number;
+}
 
 const OptionsGroup = ({ options, questionId }: OptionsGroupProps) => {
   const quizAnswers = useAppSelector((state) => state.quiz.answers);

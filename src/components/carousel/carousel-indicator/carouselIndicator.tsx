@@ -1,5 +1,10 @@
 import React from 'react';
-import { CarouselIndicatorProps } from '../../../types/interfaces';
+
+export interface CarouselIndicatorProps {
+  numberOfSlides: number;
+  activeSlide: number;
+  onIndicatorClick: (index: number) => void;
+}
 
 const CarouselIndicator = ({
   numberOfSlides,

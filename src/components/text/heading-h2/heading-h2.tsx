@@ -1,5 +1,10 @@
 import React from 'react';
-import { Heading2Props } from '../../../types/interfaces';
+
+export interface Heading2Props {
+  text: string;
+  activateAnimation: boolean;
+  color?: string;
+}
 
 const Heading2 = ({
   text,

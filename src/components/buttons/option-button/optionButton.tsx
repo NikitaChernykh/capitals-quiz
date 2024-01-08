@@ -1,5 +1,11 @@
 import React, { useRef } from 'react';
-import { OptionButtonProps } from '../../../types/interfaces';
+
+export interface OptionButtonProps {
+  icon: string;
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}
 
 const OptionButton = ({ icon, label, active, onClick }: OptionButtonProps) => {
   const ref = useRef(null);
