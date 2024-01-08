@@ -12,9 +12,9 @@ export default function CarouselQuestionSlide({
   return (
     <li className='snap-center h-screen lg:flex'>
       <section
-        className={` p-6 flex items-center bg-indigo-500 h-1/2 lg:w-1/2 lg:h-full`}
+        className={`flex items-center bg-indigo-500 h-1/2 lg:w-1/2 lg:h-full p-6`}
       >
-        <Heading2 text={question} />
+        <Heading2 text={question} activateAnimation={active} />
       </section>
       <section className='bg-slate-100 flex items-center h-1/2 lg:w-1/2 lg:w-1/2 lg:h-full'>
         <OptionsGroup options={options} questionId={questionId} />

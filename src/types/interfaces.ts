@@ -12,6 +12,7 @@ export interface Question {
 // Props
 export interface Heading2Props {
     text: string;
+    activateAnimation: boolean;
     color?: string;
 }
 
