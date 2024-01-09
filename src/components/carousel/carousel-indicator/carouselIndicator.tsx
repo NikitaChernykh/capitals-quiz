@@ -27,6 +27,7 @@ const CarouselIndicator = ({
                 onClick={() => {
                   onIndicatorClick(index);
                 }}
+                aria-label={`Go to slide number ${index + 1}`}
               ></button>
             );
           })}

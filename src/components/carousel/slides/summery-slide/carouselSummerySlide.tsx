@@ -16,11 +16,11 @@ export default function CarouselSummerySlide({
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
   const handleSubmit = async () => {
+    const placeholderApi =
+      'https://run.mocky.io/v3/9ddaff5d-aa21-4b09-b307-596f85a17183';
+    const apiEndpoint = process.env.REACT_APP_API_ENDPOINT || placeholderApi;
     try {
-      const response = await axios.post(
-        'https://run.mocky.io/v3/9ddaff5d-aa21-4b09-b307-596f85a17183',
-        answers
-      );
+      const response = await axios.post(apiEndpoint, answers);
       console.log('Response: Success', response.data);
       setSubmissionSuccess(true);
     } catch (error) {
