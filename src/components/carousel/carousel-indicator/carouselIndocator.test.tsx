@@ -13,11 +13,7 @@ describe('CarouselIndicator Component', () => {
   it('renders correct number of indicators', () => {
     const numberOfSlides = 5;
     render(
-      <CarouselIndicator
-        numberOfSlides={numberOfSlides}
-        activeSlide={0}
-        onIndicatorClick={mockOnIndicatorClick}
-      />
+      <CarouselIndicator numberOfSlides={numberOfSlides} activeSlide={0} />
     );
 
     const buttons = screen.getAllByRole('button');
@@ -31,26 +27,10 @@ describe('CarouselIndicator Component', () => {
       <CarouselIndicator
         numberOfSlides={numberOfSlides}
         activeSlide={activeSlide}
-        onIndicatorClick={mockOnIndicatorClick}
       />
     );
 
     const activeIndicator = screen.getAllByRole('button')[activeSlide];
     expect(activeIndicator).toHaveClass('bg-indigo-500');
-  });
-
-  it('calls onIndicatorClick with the correct index', () => {
-    const numberOfSlides = 3;
-    render(
-      <CarouselIndicator
-        numberOfSlides={numberOfSlides}
-        activeSlide={0}
-        onIndicatorClick={mockOnIndicatorClick}
-      />
-    );
-
-    const secondIndicator = screen.getAllByRole('button')[1];
-    fireEvent.click(secondIndicator);
-    expect(mockOnIndicatorClick).toHaveBeenCalledWith(1);
   });
 });

@@ -6,9 +6,10 @@ import { setAnswer } from '../../../../state/slices/selectedOptionSlice';
 export interface OptionsGroupProps {
   options: Option[];
   questionId: number;
+  onClick: () => void;
 }
 
-const OptionsGroup = ({ options, questionId }: OptionsGroupProps) => {
+const OptionsGroup = ({ options, questionId, onClick }: OptionsGroupProps) => {
   const quizAnswers = useAppSelector((state) => state.quiz.answers);
   const dispatch = useAppDispatch();
 
@@ -22,6 +23,7 @@ const OptionsGroup = ({ options, questionId }: OptionsGroupProps) => {
             active={quizAnswers[questionId] === index}
             onClick={() => {
               dispatch(setAnswer({ question: questionId, answer: index }));
+              onClick();
             }}
           />
         </li>

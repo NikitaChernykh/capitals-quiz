@@ -3,13 +3,11 @@ import React from 'react';
 export interface CarouselIndicatorProps {
   numberOfSlides: number;
   activeSlide: number;
-  onIndicatorClick: (index: number) => void;
 }
 
 const CarouselIndicator = ({
   numberOfSlides,
   activeSlide,
-  onIndicatorClick,
 }: CarouselIndicatorProps) => {
   return (
     <div className='fixed lg:h-screen lg:w-10 z-40'>
@@ -20,16 +18,7 @@ const CarouselIndicator = ({
             const buttonClass = isActive
               ? 'h-3 w-3 rounded-full m-2 bg-indigo-500 border-white border-2'
               : 'h-3 w-3 bg-white rounded-full m-2';
-            return (
-              <button
-                key={index}
-                className={buttonClass}
-                onClick={() => {
-                  onIndicatorClick(index);
-                }}
-                aria-label={`Go to slide number ${index + 1}`}
-              ></button>
-            );
+            return <span key={index} className={buttonClass}></span>;
           })}
         </div>
       </div>

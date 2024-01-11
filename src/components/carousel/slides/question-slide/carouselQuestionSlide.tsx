@@ -8,6 +8,7 @@ export interface CarouselQuestionSlideProps {
   question: string;
   active: boolean;
   options: Option[];
+  onClick: () => void;
 }
 
 export default function CarouselQuestionSlide({
@@ -15,6 +16,7 @@ export default function CarouselQuestionSlide({
   options,
   active,
   questionId,
+  onClick,
 }: CarouselQuestionSlideProps) {
   return (
     <li className='snap-center h-screen lg:flex'>
@@ -24,7 +26,11 @@ export default function CarouselQuestionSlide({
         <Heading2 text={question} activateAnimation={active} />
       </section>
       <section className='bg-slate-100 flex items-center h-1/2 lg:w-1/2 lg:w-1/2 lg:h-full'>
-        <OptionsGroup options={options} questionId={questionId} />
+        <OptionsGroup
+          options={options}
+          questionId={questionId}
+          onClick={onClick}
+        />
       </section>
     </li>
   );

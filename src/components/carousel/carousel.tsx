@@ -17,7 +17,12 @@ export default function Carousel() {
         block: 'nearest',
         inline: 'start',
       });
-      setActiveSlide(index);
+
+      const delayInactivationTimeout = setTimeout(() => {
+        setActiveSlide(index);
+      }, 1000);
+
+      clearTimeout(delayInactivationTimeout);
     }
   }, []);
 
@@ -51,11 +56,10 @@ export default function Carousel() {
       <CarouselIndicator
         numberOfSlides={numberOfSlides}
         activeSlide={activeSlide}
-        onIndicatorClick={scrollToSlide}
       />
       <ul
         ref={carouselRef}
-        className='max-h-screen overflow-auto snap-y snap-mandatory'
+        className='max-h-screen overflow-hidden snap-y snap-mandatory'
       >
         {questions.map((item, slideIndex) => {
           return (
@@ -65,6 +69,7 @@ export default function Carousel() {
               options={item.options}
               active={activeSlide === slideIndex}
               questionId={slideIndex}
+              onClick={() => scrollToSlide(activeSlide + 1)}
             />
           );
         })}

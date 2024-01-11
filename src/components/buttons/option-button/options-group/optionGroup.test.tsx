@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore } from './../../../../state/store';
 
 describe('OptionGroup Component', () => {
+  const mockOnClick = jest.fn();
+
   it('renders correctly with given props', () => {
     const mockOptions = [
       {
@@ -22,7 +24,11 @@ describe('OptionGroup Component', () => {
 
     render(
       <Provider store={createStore()}>
-        <OptionsGroup options={mockOptions} questionId={0} />
+        <OptionsGroup
+          options={mockOptions}
+          questionId={0}
+          onClick={mockOnClick}
+        />
       </Provider>
     );
 
@@ -49,7 +55,11 @@ describe('OptionGroup Component', () => {
 
     render(
       <Provider store={createStore()}>
-        <OptionsGroup options={mockOptions} questionId={0} />
+        <OptionsGroup
+          options={mockOptions}
+          questionId={0}
+          onClick={mockOnClick}
+        />
       </Provider>
     );
 
