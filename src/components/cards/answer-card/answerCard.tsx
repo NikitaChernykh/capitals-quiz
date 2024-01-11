@@ -5,15 +5,9 @@ interface AnswerCardProps {
   answerIndex: number;
   index: number;
   active: boolean;
-  questionId: string;
 }
 
-const AnswerCard = ({
-  answerIndex,
-  index,
-  active,
-  questionId,
-}: AnswerCardProps) => {
+const AnswerCard = ({ answerIndex, index, active }: AnswerCardProps) => {
   const answerObject = questions[index];
   const question = answerObject.question;
   let answerLabel = '';
@@ -29,7 +23,7 @@ const AnswerCard = ({
       style={{
         animationDelay: `${answersDelay}s`,
       }}
-      key={questionId}
+      key={index}
       className={`${active ? 'animate-slide-from-right-to-left-slow ' : ''}
                   mr-10 flex p-5 bg-indigo-200 rounded-lg mb-5 opacity-0`}
     >

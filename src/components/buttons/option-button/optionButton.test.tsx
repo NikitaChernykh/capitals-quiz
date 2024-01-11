@@ -5,10 +5,6 @@ import OptionButton from './optionButton';
 describe('OptionButton Component', () => {
   const mockOnClick = jest.fn();
 
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('renders correctly with given props', () => {
     render(
       <OptionButton

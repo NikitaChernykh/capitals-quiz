@@ -1,15 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export interface OptionState {
-    answers: {
-        0: null,
-        1: null,
-        2: null,
-        3: null,
-        4: null
-    }
-}  
-
 interface Answers {
     [key: number]: number | null; 
 }

@@ -49,18 +49,16 @@ export default function CarouselSummerySlide({
               activateAnimation={active}
             />
             <ul>
-              {Object.entries(answers).map(
-                ([questionId, answerIndex], index) => {
-                  return (
-                    <AnswerCard
-                      answerIndex={answerIndex}
-                      index={index}
-                      active={active}
-                      questionId={questionId}
-                    />
-                  );
-                }
-              )}
+              {Object.entries(answers).map(([_, answerIndex], index) => {
+                return (
+                  <AnswerCard
+                    key={index}
+                    answerIndex={answerIndex}
+                    index={index}
+                    active={active}
+                  />
+                );
+              })}
             </ul>
             <SubmitButton activateAnimation={active} onClick={handleSubmit} />
           </div>
