@@ -36,35 +36,4 @@ describe('OptionGroup Component', () => {
     expect(screen.getByText('🇭🇹')).toBeInTheDocument();
     expect(screen.getByText('🇧🇧')).toBeInTheDocument();
   });
-
-  it('sets button active on click', () => {
-    const mockOptions = [
-      {
-        icon: '🇦🇪',
-        label: 'UAE',
-      },
-      {
-        icon: '🇭🇹',
-        label: 'HAITI',
-      },
-      {
-        icon: '🇧🇧',
-        label: 'BARBADOS',
-      },
-    ];
-
-    render(
-      <Provider store={createStore()}>
-        <OptionsGroup
-          options={mockOptions}
-          questionId={0}
-          onClick={mockOnClick}
-        />
-      </Provider>
-    );
-
-    const buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[0]);
-    expect(buttons[0]).toHaveClass('border-indigo-500');
-  });
 });

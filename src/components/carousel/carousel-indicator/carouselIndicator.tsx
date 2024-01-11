@@ -18,7 +18,9 @@ const CarouselIndicator = ({
             const buttonClass = isActive
               ? 'h-4 w-4 rounded-full m-2 bg-indigo-500 border-white border-2'
               : 'h-4 w-4 bg-white rounded-full m-2';
-            return <span key={index} className={buttonClass}></span>;
+            return (
+              <button key={index} className={buttonClass} disabled></button>
+            );
           })}
         </div>
       </div>

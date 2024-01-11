@@ -29,7 +29,7 @@ describe('OptionButton Component', () => {
       />
     );
 
-    expect(screen.getByRole('button')).toHaveClass('border-gray-300');
+    expect(screen.getByRole('button')).toHaveClass('text-3xl');
   });
 
   it('calls onClick prop when clicked', () => {

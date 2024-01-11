@@ -1,15 +1,9 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CarouselIndicator from './carouselIndicator';
 
 describe('CarouselIndicator Component', () => {
-  const mockOnIndicatorClick = jest.fn();
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('renders correct number of indicators', () => {
     const numberOfSlides = 5;
     render(
