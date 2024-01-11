@@ -12,6 +12,15 @@ const OptionButton = ({ icon, label, active, onClick }: OptionButtonProps) => {
 
   return (
     <span className='flex flex-col group'>
+      <button
+        ref={ref}
+        className={`
+        ${active ? 'border-indigo-500' : ''}
+        m-3 p-4 rounded-lg text-3xl hover:border-indigo-500 focus:ring focus:ring-indigo-500 lg:text-6xl lg:p-10`}
+        onClick={onClick}
+      >
+        {icon}
+      </button>
       <label
         className={`
         ${active ? 'opacity-100' : 'opacity-0'}
@@ -20,15 +29,6 @@ const OptionButton = ({ icon, label, active, onClick }: OptionButtonProps) => {
       >
         {label}
       </label>
-      <button
-        ref={ref}
-        className={`
-        ${active ? 'border-indigo-500' : 'border-gray-300'}
-        m-3 border-4 p-4 rounded-lg text-3xl hover:border-indigo-500 focus:ring focus:ring-indigo-500 lg:text-6xl lg:p-10`}
-        onClick={onClick}
-      >
-        {icon}
-      </button>
     </span>
   );
 };
