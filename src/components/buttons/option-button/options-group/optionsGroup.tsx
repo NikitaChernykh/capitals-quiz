@@ -58,6 +58,9 @@ const OptionsGroup = ({ options, questionId, onClick }: OptionsGroupProps) => {
                 event.preventDefault();
                 moveToNextButton(index, !event.shiftKey);
               }
+
+              console.log(event);
+              console.log(event.key);
             }}
           />
         </li>

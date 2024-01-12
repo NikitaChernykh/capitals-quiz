@@ -6,7 +6,7 @@ interface OptionButtonProps {
 }
 
 const SubmitButton = ({ activateAnimation, onClick }: OptionButtonProps) => {
-  const buttonDelay = 6;
+  const buttonDelay = 2;
   return (
     <button
       className={`${

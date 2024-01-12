@@ -24,7 +24,7 @@ export default function CarouselSummerySlide({
       console.log('Response: Success');
       setSubmissionSuccess(true);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -37,12 +37,12 @@ export default function CarouselSummerySlide({
       ></section>
       {submissionSuccess ? (
         <section
-          className={`w-full ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}
+          className={`w-full ml-10 lg:ml-40 lg:mt-20 flex h-full lg:h-2/3`}
         >
           <Heading3 text='Thank you!' activateAnimation={active} />
         </section>
       ) : (
-        <section className={`ml-10 lg:ml-80 lg:mt-40 flex h-full lg:h-2/3`}>
+        <section className={`ml-10 lg:ml-40 lg:mt-20 flex h-full lg:h-2/3`}>
           <div>
             <Heading3
               text='An overview of your answers:'

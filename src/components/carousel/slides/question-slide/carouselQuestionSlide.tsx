@@ -19,7 +19,7 @@ export default function CarouselQuestionSlide({
   onClick,
 }: CarouselQuestionSlideProps) {
   return (
-    <li className={`snap-center h-screen lg:flex`} data-testId='slide'>
+    <li className={`snap-center h-screen lg:flex`} data-testid='slide'>
       <section
         className={`flex items-center bg-indigo-500 h-1/2 lg:w-1/2 lg:h-full p-6`}
       >

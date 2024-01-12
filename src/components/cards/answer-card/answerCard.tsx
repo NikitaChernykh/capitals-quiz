@@ -12,7 +12,7 @@ const AnswerCard = ({ answerIndex, index, active }: AnswerCardProps) => {
   const question = answerObject.question;
   let answerLabel = '';
   let answerIcon = '';
-  const answersDelay = 1 + index + 1 * 0.1;
+  const answersDelay = 1 + index * 0.1;
 
   if (questions[index].options[answerIndex]) {
     answerLabel = questions[index].options[answerIndex].label;
