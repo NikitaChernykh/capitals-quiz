@@ -9,9 +9,9 @@ export interface OptionButtonProps {
 
 const OptionButton = ({ icon, label, active, onClick }: OptionButtonProps) => {
   return (
-    <span className='flex flex-col group'>
+    <div className='flex flex-col group'>
       <button
-        className={`w-25 h-25 m-3 -mb-5 p-4 text-3xl focus:ring focus:ring-indigo-500 lg:text-6xl lg:p-10 group-hover:animate-slide-to-top group-hover:animate-slide-to-top`}
+        className={`w-25 h-25 m-3 lg:-mb-5 p-4 text-3xl focus:ring focus:ring-indigo-500 lg:text-6xl lg:p-10 group-hover:animate-slide-to-top group-hover:animate-slide-to-top`}
         onClick={onClick}
       >
         {icon}
@@ -23,7 +23,7 @@ const OptionButton = ({ icon, label, active, onClick }: OptionButtonProps) => {
       >
         {label}
       </label>
-    </span>
+    </div>
   );
 };
 

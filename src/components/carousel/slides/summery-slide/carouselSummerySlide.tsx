@@ -20,11 +20,11 @@ export default function CarouselSummerySlide({
       'https://run.mocky.io/v3/9ddaff5d-aa21-4b09-b307-596f85a17183';
     const apiEndpoint = process.env.REACT_APP_API_ENDPOINT || placeholderApi;
     try {
-      const response = await axios.post(apiEndpoint, answers);
-      console.log('Response: Success', response.data);
+      await axios.post(apiEndpoint, answers);
+      console.log('Response: Success');
       setSubmissionSuccess(true);
     } catch (error) {
-      console.error('Error submitting answers:', error);
+      console.log(error);
     }
   };
 

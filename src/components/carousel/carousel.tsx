@@ -59,6 +59,7 @@ export default function Carousel() {
       />
       <ul
         ref={carouselRef}
+        data-testid='slide-list'
         className='max-h-screen overflow-hidden snap-y snap-mandatory'
       >
         {questions.map((item, slideIndex) => {

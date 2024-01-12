@@ -19,7 +19,12 @@ const CarouselIndicator = ({
               ? 'h-4 w-4 rounded-full m-2 bg-indigo-500 border-white border-2'
               : 'h-4 w-4 bg-white rounded-full m-2';
             return (
-              <button key={index} className={buttonClass} disabled></button>
+              <button
+                key={index}
+                className={buttonClass}
+                disabled
+                tabIndex={-1}
+              ></button>
             );
           })}
         </div>
