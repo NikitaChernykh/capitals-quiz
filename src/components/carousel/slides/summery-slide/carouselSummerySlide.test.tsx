@@ -10,8 +10,6 @@ jest.mock('axios');
 afterEach(cleanup);
 
 describe('CarouselSummerySlide Component', () => {
-  const mockedAxios = axios as jest.Mocked<typeof axios>;
-
   it('renders correctly with given props', () => {
     render(
       <Provider store={createStore()}>

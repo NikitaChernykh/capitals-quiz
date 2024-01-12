@@ -52,4 +52,25 @@ describe('OptionGroup Component', () => {
 
     expect(mockOnClick).toHaveBeenCalled();
   });
+
+  it('changes focus to next button on Tab press', () => {
+    render(
+      <Provider store={createStore()}>
+        <OptionsGroup
+          options={mockOptions}
+          questionId={0}
+          onClick={mockOnClick}
+        />
+      </Provider>
+    );
+
+    const firstButton = screen.getByText('🇦🇪');
+    firstButton.focus();
+    expect(firstButton).toHaveFocus();
+
+    fireEvent.keyDown(firstButton, { key: 'Tab', code: 'Tab' });
+
+    const secondButton = screen.getByText('🇭🇹');
+    expect(secondButton).toHaveFocus();
+  });
 });
