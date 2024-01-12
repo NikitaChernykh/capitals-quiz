@@ -19,7 +19,7 @@ describe('SubmitButton Component', () => {
     const button = screen.getByText('Submit Results');
 
     expect(button).not.toHaveClass('animate-slide-from-right-to-left-slow');
-    expect(button).toHaveStyle('animationDelay: 6s');
+    expect(button).toHaveStyle('animationDelay: 2s');
 
     rerender(<SubmitButton activateAnimation={true} onClick={mockOnClick} />);
     expect(button).toHaveClass('animate-slide-from-right-to-left-slow');
