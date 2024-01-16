@@ -12,7 +12,10 @@ const CarouselIndicator = ({
   return (
     <div className='fixed z-40 ml-1 lg:h-screen lg:w-12 lg:ml-2'>
       <div className='flex h-screen items-center'>
-        <div className='flex flex-col bg-slate-500 bg-opacity-25 rounded-lg'>
+        <div
+          className='flex flex-col bg-slate-500 bg-opacity-25 rounded-lg'
+          role='tablist'
+        >
           {Array.from({ length: numberOfSlides }).map((_, index) => {
             const isActive = index === activeSlide;
             const buttonClass = isActive

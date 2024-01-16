@@ -10,7 +10,7 @@ module.exports = {
         },
         slide_left: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-95%)' },
+          '100%': { transform: 'translateX(calc(-100% + 50px))' },
         },
         slide_from_right_to_left: {
           '0%': { transform: 'translateX(20%)', opacity: '0' },
